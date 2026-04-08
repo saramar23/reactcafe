@@ -345,7 +345,6 @@ input:focus-visible {
 
 .error-message {
   display: inline-block;
-  background-color: var(--brand-color-background-danger);
   color: var(--brand-color-danger);
   padding: 3px;
   margin-top: 3px;

@@ -26,7 +26,7 @@ export const About = () => {
                     <p
                         className="fs-5 text-muted my-3"
                     >
-                        In 2015, Matthew and Sarah Marrias decided to turn their shared passion for coffee into a reality.
+                        In 2015, Joe and Anna Marrias decided to turn their shared passion for coffee into a reality.
                         They envisioned a place where neighbors could gather, stories could be shared, and community could thrive.
                         Thus, ReactCafe was born. Nestled on a cozy corner in a quiet Vancouver neighborhood, the shop became a beloved fixture,
                         a testament to the power of a warm cup and a welcoming smile.
@@ -47,7 +47,7 @@ export const About = () => {
                         className="fs-5 text-muted mb-3"
                     >
                         As ReactCafe celebrates its 11th year, it remains a testament to the power of a simple idea well-executed.
-                        Matthew and Sarah's vision for a community-focused coffee shop has truly blossomed,
+                        Joe and Anna's vision for a community-focused coffee shop has truly blossomed,
                         creating a warm and welcoming space where friends, neighbors,
                         and strangers can come together to enjoy a good cup of coffee and connect with one another.
                     </p>

@@ -61,6 +61,15 @@ export type StoreItemProps = Product & {
     description: string
 }
 
+export type FormField = "firstName" | "lastName" | "email" | "message";
+
+export type ContactFormValues = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    message: string
+}
+
 export type HighlightsItemsProps = {
     id: string; 
     Icon: LucideIcon; 

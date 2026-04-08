@@ -13,8 +13,8 @@ export const FeaturedSection = ({ featuredData }: { featuredData: Product[] }) =
             >
                 <div className="py-4">
                     <p className="text-spaced text-uppercase text-muted small mb-1">Our Choices</p>
-                    <h2 className="heading fw-semibold">                        
-                        ReactCafe best sellers                        
+                    <h2 className="heading fw-semibold">
+                        ReactCafe best sellers
                     </h2>
                     <p className="text-spaced text-muted fst-italic fs-6">
                         A list of our best-seller items chosen for you.
@@ -49,7 +49,13 @@ export const FeaturedSection = ({ featuredData }: { featuredData: Product[] }) =
                                     >
                                         {formatCurrency(feature.price)}
                                     </p>
-                                    <NavLink to={`/menu#${feature.id}`} className="btn btn-brand btn-md my-2">Order now</NavLink>
+                                    <NavLink
+                                        to={`/menu#${feature.id}`}
+                                        className="btn btn-brand btn-md my-2"
+                                        aria-label={`Order now ${feature.name}`}
+                                    >
+                                        Order now
+                                    </NavLink>
                                 </div>
                             </div>
                         </Col>

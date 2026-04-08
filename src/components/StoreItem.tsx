@@ -44,7 +44,7 @@ export const StoreItem = ({ id, name, description, price, imgUrl, alt }: StoreIt
                     {quantity === 0 ?
                         <div className="w-100">
                             <Button                                
-                                aria-label={`Add ${name} to cart`}
+                                aria-label={`Add to cart ${name}`}
                                 className="btn-brand fw-medium"
                                 onClick={() => increaseCartItemQuantity(id)}
                             >
@@ -75,7 +75,7 @@ export const StoreItem = ({ id, name, description, price, imgUrl, alt }: StoreIt
                             </div>
                             <div className="flex-wrap">
                                 <Button                                    
-                                    aria-label={`Remove ${name} from cart`}
+                                    aria-label={`Remove from cart ${name}`}
                                     className="btn-remove fw-medium"
                                     onClick={() => removeFromCart(id)}
                                 >
