@@ -1,4 +1,4 @@
-# ReactCafé — Shopping Cart
+# ReactCafé - Shopping Cart
 
 > A café-themed single-page app with a menu, shopping cart, and informational pages—built to practice React, TypeScript, and client-side state.
 
