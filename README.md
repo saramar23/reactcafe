@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# ReactCafé — Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A café-themed single-page app with a menu, shopping cart, and informational pages—built to practice React, TypeScript, and client-side state.
 
-Currently, two official plugins are available:
+ReactCafé is a small portfolio-style frontend: a curated menu, cart behavior with persistence, routing, and a contact form with validation. It is **not** a full e-commerce stack: there is no backend, database, or real checkout. The focus is clear structure, accessibility-minded UI, and maintainable TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Menu (store)** — Browse café items; filtering is part of the planned scope (see [PRD.md](./PRD.md)).
+- **Shopping cart** — Add, remove, and adjust quantities via React Context; cart state persists in `localStorage`.
+- **Cart drawer** — Review the cart without leaving the current page.
+- **Pages** — Home, Menu, About, and Contacts (including form validation).
+- **Routing** — Client-side routes with React Router 7 (`/`, `/menu`, `/about`, `/contacts`) and a not-found experience for errors.
+- **UI** — Bootstrap 5 and React-Bootstrap, Lucide icons, and custom design tokens in `App.css`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+| Area | Choice                                      |
+|------------|---------------------------------------------|
+| UI         | React 19, TypeScript                        |
+| Build      | Vite 7                                      |
+| Styling    | Bootstrap 5, React-Bootstrap, custom CSS    |
+| Routing    | React Router 7                              |
+| Icons      | Lucide React                                |
+| State      | Context API + `useLocalStorage` hook        |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Node.js](https://nodejs.org/) **20.x or newer** (recommended for current Vite major versions)
+- npm (bundled with Node)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+From the project root (after cloning or unpacking the sources):
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Development server
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open **http://localhost:5173** (Vite default). The terminal will show the exact URL if the port differs.
+
+### Production build
+
+```bash
+npm run build
+```
+
+Output is written to `dist/`.
+
+### Preview the production build locally
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Configuration
+
+There is no `.env` or backend configuration in this project. All data is static or stored in the browser (`localStorage` for the cart).
+
+## Project structure
+
+```
+shopping-cart/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # UI pieces (nav, cart, cards, modals, …)
+│   ├── context/            # Shopping cart Context provider
+│   ├── data/               # Static menu, nav, contacts, socials
+│   ├── hooks/              # useCart, useLocalStorage, …
+│   ├── layouts/            # Root layout shell
+│   ├── pages/              # Home, Menu, About, Contacts, NotFound
+│   ├── routes/             # Router configuration
+│   ├── types/              # Shared TypeScript types
+│   ├── utilities/          # Helpers (e.g. currency, validation)
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── App.css             # Design tokens and global styles
+├── PRD.md                  # Product requirements and design notes
+├── package.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## Deployment
+
+The [PRD](./PRD.md) targets static hosting (for example Vercel or Netlify). Typical flow:
+
+1. Run `npm run build`.
+2. Deploy the `dist/` folder per your host’s static-site instructions.
+
+## Acknowledgments
+
+- Product requirements and design guidance: [PRD.md](./PRD.md) (author: Sara).
+- Tooling: [Vite](https://vite.dev/), [React](https://react.dev/), [Bootstrap](https://getbootstrap.com/).
