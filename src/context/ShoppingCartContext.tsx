@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, type ReactNode } from "react"
 import type { CartContextType, CartItemProps } from "../types";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -7,7 +6,7 @@ export const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
 
-    const [ cartItems, setCartItems ] = useLocalStorage<CartItemProps[]>("shopping-cart", []);
+    const [ cartItems, setCartItems ] = useLocalStorage<CartItemProps[]>("reactcafe", []);
     const [ isOpen, setIsOpen ] = useState(false);
 
     //If the item with that id is found, return its quantity or return 0
