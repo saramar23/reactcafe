@@ -1,27 +1,28 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { PageTitle } from "../components/PageTitle"
+import { publicUrl } from "../utilities/publicUrl"
 
 export const About = () => {
     return (
         <Container>
-            <h1>About</h1>
+            <PageTitle
+                className="page-title-block--page"
+                title="About us"
+                subtitle="The people and place behind ReactCafe."
+            />
             <Row xs={1} md={1} xl={2} className="g-5 mb-5">
                 <Col>
                     <img
-                        src="media/reactcafe.png"
+                        src={publicUrl("media/reactcafe.png")}
                         className="img-fluid img-about-page rounded"
                         alt="Inside ReactCafe"
                     />
                 </Col>
                 <Col>
-                    <p
-                        className="text-spaced text-uppercase text-muted small mb-1"
+                    <h2
+                        className="mb-1"
                     >
                         Our Story
-                    </p>
-                    <h2
-                        className="heading fw-semibold"
-                    >
-                        About ReactCafe
                     </h2>
                     <p
                         className="fs-5 text-muted my-3"

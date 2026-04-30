@@ -1,8 +1,8 @@
-# ReactCafé — Shopping Cart
+# ReactCafe
 
 > A café-themed single-page app with a menu, shopping cart, and informational pages—built to practice React, TypeScript, and client-side state.
 
-ReactCafé is a small portfolio-style frontend: a curated menu, cart behavior with persistence, routing, and a contact form with validation. It is **not** a full e-commerce stack: there is no backend, database, or real checkout. The focus is clear structure, accessibility-minded UI, and maintainable TypeScript.
+ReactCafe is a small portfolio-style frontend: a curated menu, cart behavior with persistence, routing, and a contact form with validation. It is **not** a full e-commerce stack: there is no backend, database, or real checkout. The focus is clear structure, accessibility-minded UI, and maintainable TypeScript.
 
 ## Features
 

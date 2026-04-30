@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { formatCurrency } from "../utilities/formatCurrency";
 import type { Product } from "../types";
 import { NavLink } from "react-router";
+import { publicUrl } from "../utilities/publicUrl";
+import { PageTitle } from "./PageTitle";
 
 export const FeaturedSection = ({ featuredData }: { featuredData: Product[] }) => {
     return (
@@ -11,15 +13,15 @@ export const FeaturedSection = ({ featuredData }: { featuredData: Product[] }) =
             <Container
                 className="featured-section-container my-2 my-md-5"
             >
-                <div className="py-4">
-                    <p className="text-spaced text-uppercase text-muted small mb-1">Our Choices</p>
-                    <h2 className="heading fw-semibold">
-                        ReactCafe best sellers
-                    </h2>
-                    <p className="text-spaced text-muted fst-italic fs-6">
-                        A list of our best-seller items chosen for you.
-                    </p>
-                </div>
+                <PageTitle
+                    as="div"
+                    headingLevel={2}
+                    className="py-4"
+                    eyebrow="Our Choices"
+                    title="ReactCafe best sellers"
+                    subtitle="A list of our best-seller items chosen for you."
+                    subtitleVariant="italic"
+                />
                 <Row xs={1} md={2} lg={3}
                     className="g-4"
                 >
@@ -32,7 +34,7 @@ export const FeaturedSection = ({ featuredData }: { featuredData: Product[] }) =
                                 className="featured-wrapper position-relative "
                             >
                                 <img
-                                    src={feature.imgUrl}
+                                    src={publicUrl(feature.imgUrl)}
                                     alt={feature.alt}
                                     className="featured-image"
                                 />

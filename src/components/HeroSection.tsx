@@ -1,11 +1,15 @@
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router";
+import { publicUrl } from "../utilities/publicUrl";
 
 export const HeroSection = () => {
     return (
         <section
             aria-label="Hero section"
             className="position-relative hero-section w-100"
+            style={{
+                backgroundImage: `url(${publicUrl("media/coffee-hero.png")})`,
+            }}
         >
             <div
                 aria-hidden="true"
@@ -21,8 +25,7 @@ export const HeroSection = () => {
                             Your neighborhood café for handcrafted espresso, fresh pastries, and warm vibes.
                         </p>
                         <div className="mt-4 d-flex gap-3">
-                            <NavLink to="/about" className="btn btn-brand btn-md ">Learn more about us</NavLink>
-                            <NavLink to="/menu" className="btn btn-submit btn-md ">See Our Menu</NavLink>
+                            <NavLink to="/menu" className="btn btn-brand btn-lg">Go to Our Menu</NavLink>
                         </div>
                         <div className="mt-4">
                             <span className="text-warning fs-4">★★★★★</span>

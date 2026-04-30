@@ -3,6 +3,7 @@ import { formatCurrency } from "../utilities/formatCurrency"
 import { Minus, Plus } from "lucide-react"
 import type { StoreItemProps } from "../types"
 import { useCart } from "../hooks/useCart"
+import { publicUrl } from "../utilities/publicUrl"
 
 export const StoreItem = ({ id, name, description, price, imgUrl, alt }: StoreItemProps) => {
     const { getItemQuantity, increaseCartItemQuantity, decreaseCartItemQuantity, removeFromCart } = useCart();
@@ -15,7 +16,7 @@ export const StoreItem = ({ id, name, description, price, imgUrl, alt }: StoreIt
             <Card.Img
                 variant="top"
                 loading="lazy"
-                src={imgUrl}
+                src={publicUrl(imgUrl)}
                 height="200px"
                 style={{ objectFit: "cover" }}
                 alt={alt}

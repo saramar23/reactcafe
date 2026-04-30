@@ -1,6 +1,7 @@
 import { CircleCheck } from "lucide-react"
 import { useRef, useState } from "react"
 import { Row, Col, Container, Button } from "react-bootstrap"
+import { PageTitle } from "../components/PageTitle"
 import { SocialsList } from "../components/SocialsList"
 import { ContactsList } from "../components/ContactsList"
 import { validateForm } from "../utilities/validateForm"
@@ -32,9 +33,10 @@ export const Contacts = () => {
             setError(prev => ({ ...prev, [fieldName]: result[fieldName] }));
         } else {
             setError(prev => {
-                const { [fieldName]: _, ...rest } = prev;
-                return rest;
-            })
+                const next = { ...prev };
+                delete next[fieldName];
+                return next;
+            });
         }
     }
 
@@ -63,7 +65,11 @@ export const Contacts = () => {
 
     return (
         <Container className="contacts-page my-5">
-            <h1>Contacts</h1>
+            <PageTitle
+                className="page-title-block--page"
+                title="Contacts"
+                subtitle="Questions, feedback, or a custom order: we're glad to help."
+            />
             <Row xs={1} lg={2} className="g-3">
                 <Col className="contacts-col">
                     <form onSubmit={handleSubmit} noValidate>
@@ -141,7 +147,7 @@ export const Contacts = () => {
                                         className={`form-control${error.email ? " is-invalid" : ""}`}
                                         id="email-input"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder="Email address"
                                         onBlur={onBlur}
                                         aria-label="Email"
                                         aria-invalid={error.email ? true : false}
@@ -165,7 +171,7 @@ export const Contacts = () => {
                                         ref={textAreaRef}
                                         id="typeMessage"
                                         name="message"
-                                        placeholder="Your Message"
+                                        placeholder="Leave us a message"
                                         onBlur={onBlur}
                                         aria-label="Your Message"
                                         aria-invalid={error.message ? true : false}

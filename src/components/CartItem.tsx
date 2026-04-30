@@ -2,6 +2,7 @@ import type { CartItemUIProps } from "../types";
 import { useCart } from "../hooks/useCart";
 import { Button, Stack } from "react-bootstrap";
 import { formatCurrency } from "../utilities/formatCurrency";
+import { publicUrl } from "../utilities/publicUrl";
 
 export const CartItem = ({ item, quantity }: CartItemUIProps) => {
 
@@ -10,7 +11,7 @@ export const CartItem = ({ item, quantity }: CartItemUIProps) => {
     return (
         <Stack direction="horizontal" gap={2}>
             <img 
-                src={item.imgUrl} 
+                src={publicUrl(item.imgUrl)} 
                 alt=""
                 className="cart-image"                
             />

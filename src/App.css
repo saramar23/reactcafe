@@ -1,18 +1,18 @@
 :root {
   --brand-color: #F4F1DE;
   --brand-color-hover: #f0e391;
-  /* for hover */
+  
   --brand-color-dark: #9c4749;
   --brand-color-background: #855d38;
   --brand-color-hero: #502f1073;
 
   --brand-color-danger: #e02323;
-  --brand-color-background-danger: #f0dcdc;
+ 
   --brand-color-success-background: #C8F0C8;
   --brand-color-success: #127012;
   --brand-font-body: "Vollkorn", serif;
   --brand-font-display: "Roboto Slab", serif;
-  --bs-navbar-toggler-icon-bg: ;
+  --focus-ring-color: #a01745;
 }
 
 #root {
@@ -42,14 +42,14 @@ h3 {
   font-family: var(--brand-font-display);
 }
 
-/* min size, preferred size, max size */
+/* min, preferred, max size */
 h1 {
-  margin: 5rem 0rem 2rem 0rem;
+  margin: 0;
   font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.3rem, 4vw, 2rem);
 }
 
 h3 {
@@ -66,14 +66,44 @@ p {
 }
 
 /* Headings */
-
-.heading::before {
+  /* Decorative underline */
+.heading::after {
   content: "";
   display: block;
   height: 3px;
   background: linear-gradient(to right, transparent, var(--brand-color-dark), transparent);
-  margin: 0.5rem auto;
+  margin: 0.5rem;
   border-radius: 1px;
+}
+
+/* Styled Headings */
+.page-title-block {
+  margin: 0 0 1rem 0;
+}
+
+.page-title-block--page {
+  margin: 5rem 0rem 2rem 0rem;
+}
+
+.page-title-block--center {
+  text-align: center;
+}
+
+.page-title-block--center .page-title-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title-block .page-title {
+  margin: 0 0 0.35rem 0;
+  color: var(--brand-color-background);
+  line-height: 1.2;
+}
+
+.page-title-subtitle {
+  font-family: var(--brand-font-body);
+  line-height: 1.5;
+  max-width: 40rem;
 }
 
 /* Logo */
@@ -127,31 +157,40 @@ p {
 }
 
 /* Buttons */
+
+/* Implement this rule*/
+.btn.btn-brand:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 3px;
+}
+
 .btn.btn-brand {
   background-color: var(--brand-color);
   color: var(--brand-color-dark);
   border: none;
 }
 
-.btn-submit,
 .btn-remove {
+  background-color: var(--brand-color-dark);
+}
+
+.btn-submit {
   background-color: var(--brand-color-background);
   color: white;
   border: none;
 }
 
-.btn-submit:hover,
-.btn-remove:hover {
+.btn-submit:hover {
   background-color: var(--brand-color-dark);
   color: var(--brand-color-hover);
 }
 
-.btn.btn-brand:hover {
-  background-color: var(--brand-color-hover);
+.btn-remove:hover {
+  background-color: var(--brand-color-background);
 }
 
-.btn-btn-brand:focus {
-  box-shadow: 0 0 0 5px var(--brand-color-dark);
+.btn.btn-brand:hover {
+  background-color: var(--brand-color-hover);
 }
 
 .btn-circle-sm {
@@ -185,10 +224,9 @@ p {
 /* Hero Layout */
 
 .hero-section {
-  background-image: url('/media/coffee-hero.png');
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 60vh;
 }
 
 .hero-blur-mask {
@@ -247,6 +285,13 @@ p {
   margin: 0.5rem auto;
   border-radius: 1px;
 }
+
+/* Highlights icons */
+.highlights-icon {
+  color: var(--brand-color-dark);
+  background-color: var(--brand-color);
+}
+
 
 /* Shopping Cart */
 
@@ -383,6 +428,10 @@ footer {
     aspect-ratio: 1/1;
     width: 100%;
     overflow: hidden;
+  }
+
+  .hero-section {
+    height: 100vh;
   }
 }
 

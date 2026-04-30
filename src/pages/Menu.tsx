@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { PageTitle } from "../components/PageTitle"
 import { StoreItem } from "../components/StoreItem"
 import { itemsData } from "../data/items"
 import { useEffect } from "react"
@@ -18,7 +19,11 @@ export const Menu = () => {
 
     return (
         <Container>
-            <h1>Menu</h1>
+            <PageTitle
+                className="page-title-block--page"
+                title="Menu"
+                subtitle="Handcrafted drinks and bites, ready to order."
+            />
             <Row xs={1} md={2} lg={3} className="g-3 mb-5">
                 {itemsData.map(item => (
                     <Col

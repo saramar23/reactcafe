@@ -1,6 +1,7 @@
 import { Armchair, Coffee, Croissant, Smile, Users } from "lucide-react"
-import { Button, Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import type { HighlightsItemsProps } from "../types"
+import { PageTitle } from "./PageTitle"
 
 const HIGHLIGHT_ITEMS: HighlightsItemsProps[] = 
 [
@@ -34,17 +35,22 @@ const HIGHLIGHT_ITEMS: HighlightsItemsProps[] =
 export const Highlights = () => {
     return (
         <Container>
-            <p className="text-spaced text-uppercase text-muted small mb-1">
-                Highlights
-            </p>
-            <h2 className="heading fw-semibold mb-3">What we're known for</h2>
+            <PageTitle
+                as="div"
+                headingLevel={2}
+                eyebrow="Highlights"
+                title="What we're known for"
+                subtitle="Why people love ReactCafe."
+                subtitleVariant="italic"
+            />
+            
             <Row xs={1} md={2} className="g-3">
                 {HIGHLIGHT_ITEMS.map(({ id, Icon, label }) => (
                     <Col key={id}>
                         <div className="d-flex align-items-center gap-3">
-                            <Button className="btn-brand">
-                                <Icon size={24} aria-hidden="true" />
-                            </Button>
+                            <span className="highlights-icon d-inline-flex flex-shrink-0 p-2 rounded" aria-hidden="true">
+                                <Icon size={24} />
+                            </span>
                             <span>{label}</span>
                         </div>
                     </Col>

@@ -1,9 +1,9 @@
 # Product Requirements Document
-## ReactCafé — Shopping Cart
+## ReactCafe
 
 **Author:** Sara  
 **Status:** In Progress  
-**Last Updated:** March 2026  
+**Last Updated:** April 2026  
 **Target:** Junior Frontend Developer Portfolio Project  
 
 ---
@@ -25,7 +25,7 @@
 
 ## 1. Project Overview
 
-ReactStore is a small café-themed online shopping cart built with React 19, TypeScript, Bootstrap 5, and React Router 7. It demonstrates core frontend skills expected of a junior developer: component architecture, state management via Context API, routing, form handling, accessibility basics, and persistent client-side state.
+ReactCafe is a small café-themed online shopping cart built with React 19, TypeScript, Bootstrap 5, and React Router 7. It demonstrates core frontend skills expected of a junior developer: component architecture, state management via Context API, routing, form handling, accessibility basics, and persistent client-side state.
 
 **This is not an e-commerce platform.** The scope is intentionally small — a curated café menu (5–8 items), a shopping cart, and informational pages. The priority is clean, readable, well-structured code over feature volume.
 
@@ -265,7 +265,6 @@ Even though you are working alone, these practices reflect what a real team expe
   - `test: add unit tests for useLocalStorage hook`
   - `chore: update ESLint config to enforce import order`
 - **Branch per feature:** even when working alone, create a branch per task (`feat/home-hero-section`, `fix/cart-focus-management`) and merge via a simulated PR process (merge into `main` only when the feature is complete and working)
-- **No direct commits to `main`** — treat `main` as the deployed branch
 - Commit frequently — small, focused commits are easier to review and revert than large ones
 
 ### 6.2 Code Review Mindset (Self-Review Checklist)
