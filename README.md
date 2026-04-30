@@ -1,4 +1,4 @@
-# ReactCafe
+# ReactCafe — Shopping Cart
 
 > A café-themed single-page app with a menu, shopping cart, and informational pages—built to practice React, TypeScript, and client-side state.
 
@@ -74,7 +74,7 @@ There is no `.env` or backend configuration in this project. All data is static 
 ## Project structure
 
 ```
-shopping-cart/
+reactcafe/
 ├── public/                 # Static assets
 ├── src/
 │   ├── components/         # UI pieces (nav, cart, cards, modals, …)
